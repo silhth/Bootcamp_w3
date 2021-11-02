@@ -62,7 +62,7 @@ const arr = [
   ]
 
 
-
+// modifico array esistente 
 // arr.forEach((element) => {
 //     delete element.id 
 //     delete element.username     
@@ -72,6 +72,8 @@ const arr = [
 
 // console.log(arr);
 
+// creao nuovo array
+
 const newArr = []
 
 arr.forEach((element) => {
@@ -80,7 +82,6 @@ arr.forEach((element) => {
         email: element.email.toLowerCase(),
     }
     newArr.push(obj)
-    
 })
 
 console.log(newArr)
