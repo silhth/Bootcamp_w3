@@ -63,11 +63,24 @@ const arr = [
 
 
 
-arr.forEach((element) => {
-    delete element.id 
-    delete element.username     
-    element.email = element.email.toLowerCase();
+// arr.forEach((element) => {
+//     delete element.id 
+//     delete element.username     
+//     element.email = element.email.toLowerCase();
     
-});
+// });
 
-console.log(arr);
+// console.log(arr);
+
+const newArr = []
+
+arr.forEach((element) => {
+    let obj = {
+        name : element.name,
+        email: element.email.toLowerCase(),
+    }
+    newArr.push(obj)
+    
+})
+
+console.log(newArr)
