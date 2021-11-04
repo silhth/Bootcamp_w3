@@ -53,9 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // } else {alert("add a name")}
 
         // if (typeof (phone) === 'number' || ){
-        //      data.push(addCont);
+        //      ;
         // } else {alert= "add a number"}
-        
+        data.push(addCont);
         render(list, datasort)
     }
 
