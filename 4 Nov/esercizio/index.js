@@ -56,10 +56,10 @@ document.addEventListener('DOMContentLoaded', () => {
             alert("add a name")
 
          } if (isNaN(addCont.phone) || addCont.phone === "" || addCont.phone.length < 6){
-            alert("add a valid number")
+            alert("add a valid number (> 6 digits)")
 
          } if(addCont.email.indexOf('@') === -1 || addCont.email.indexOf('.') === -1 || addCont.email === ""  )  
-         {alert("add a valid email address")}
+         {alert("add a valid email address (mandatory @ and .)")}
           else{data.push(addCont)};
         datasort(data)
         render(list, data)
