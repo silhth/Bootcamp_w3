@@ -48,14 +48,15 @@ document.addEventListener('DOMContentLoaded', () => {
             phone: addContact(contNum),
             email: addContact(contMail)
         }
-        // if (addCont.name !== "" ){
-        //     data.push(addCont);
-        // } else {alert("add a name")}
+        if (addCont.name === "" ){
+            alert("add a name")
 
-        // if (typeof (phone) === 'number' || ){
-        //      ;
-        // } else {alert= "add a number"}
-        data.push(addCont);
+         } if (isNaN(addCont.phone) || addCont.phone === "" ){
+            alert("add a number")
+
+         } if(addCont.email.indexOf('@') === -1 || addCont.phone === "")  {alert("add a valid email address")}
+          else{data.push(addCont)}
+        ;
         render(list, datasort)
     }
 
