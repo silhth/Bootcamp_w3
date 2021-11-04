@@ -15,9 +15,10 @@ container.innerHTML= content;
 
 
 document.addEventListener( 'DOMContentLoaded', () => {
-    const form = q('form');
-    const input = q('form input');
+    const form = q('.contact');
+    const input = q('#search');
     const list = q('ul');
+
 
     // const elements =data.map((element, index)=>{
     //     // return element.name + ', ' + element.phone + ', ' + element.email; 
@@ -31,5 +32,26 @@ document.addEventListener( 'DOMContentLoaded', () => {
 
     render(list, data);
 
+    // form.addEventListener('submit', (event) => {
+    //     // event.preventDefault(); //mi permette di non ricaricare la pagina quando clicco submit
+    //     const value = input.value.toLowerCase();
+    //     const results = data.filter ((element) => {
+    //         return element.name.toLowerCase().search(value) > -1 || element.email.toLowerCase().search(value) > -1
+            
+    //     })
+    //     render(list, results);
+    // });
+
+    input.addEventListener('keyup', () => {
+            // event.preventDefault(); //mi permette di non ricaricare la pagina quando clicco submit
+            const value = input.value.toLowerCase();
+            const results = data.filter ((element) => 
+               element.name.toLowerCase().search(value) > -1 || element.email.toLowerCase().search(value) > -1
+                )
+            render(list, results);
+        });
+
 })
+
+
 
