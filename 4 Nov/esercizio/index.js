@@ -24,9 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const contName = q('#add-name')
     const contNum = q('#add-number')
     const contMail = q('#add-mail')
-    const datasort = data.sort((a,b) => (a.name.toLowerCase() > b.name.toLowerCase()) ? 1 : ((a.name.toLowerCase() < b.name.toLowerCase())? -1 : 0))
-    
-    render(list, datasort);
+    const datasort = (items) => 
+        {items.sort((a,b) => 
+        (a.name.toLowerCase() > b.name.toLowerCase()) ? 1 : ((a.name.toLowerCase() < b.name.toLowerCase())? -1 : 0))}
+   
+    datasort(data)
+
+    render(list, data);
 
     input.addEventListener('keyup', () => {
         // event.preventDefault(); //mi permette di non ricaricare la pagina quando clicco submit
@@ -51,13 +55,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (addCont.name === "" ){
             alert("add a name")
 
-         } if (isNaN(addCont.phone) || addCont.phone === "" ){
-            alert("add a number")
+         } if (isNaN(addCont.phone) || addCont.phone === "" || addCont.phone.length < 6){
+            alert("add a valid number")
 
-         } if(addCont.email.indexOf('@') === -1 || addCont.phone === "")  {alert("add a valid email address")}
-          else{data.push(addCont)}
-        ;
-        render(list, datasort)
+         } if(addCont.email.indexOf('@') === -1 || addCont.email.indexOf('.') === -1 || addCont.email === ""  )  
+         {alert("add a valid email address")}
+          else{data.push(addCont)};
+        datasort(data)
+        render(list, data)
     }
 
 
