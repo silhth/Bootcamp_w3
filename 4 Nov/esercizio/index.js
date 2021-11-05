@@ -2,6 +2,7 @@ const q = (selector) => document.querySelector(selector);
 
 
 const render = (container, items) => {
+    items.sort((a,b) => (a.name.toLowerCase() > b.name.toLowerCase()) ? 1 : ((a.name.toLowerCase() < b.name.toLowerCase())? -1 : 0))
     const elements = items.map((element) =>
         `<li>
         <h3>${element.name}</h3>
@@ -10,7 +11,7 @@ const render = (container, items) => {
     </li>`
     );
 
-    const content = elements.sort((a,b) => (a.toLowerCase() > b.toLowerCase()) ? 1 : -1).join('');
+    const content = elements.join('');
     
     container.innerHTML = content;
 }
