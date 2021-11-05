@@ -24,7 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const contName = q('#add-name')
     const contNum = q('#add-number')
     const contMail = q('#add-mail')
-    const inputAll =q ('input')
+
+    // posso inserire il sort fuori dal render per evetare che tutto ciò che nserisco venga ordinato
+    // const datasort = (items) => 
+    //     {items.sort((a,b) => 
+    //     (a.name.toLowerCase() > b.name.toLowerCase()) ? 1 : ((a.name.toLowerCase() < b.name.toLowerCase())? -1 : 0))}
+   
+    // datasort(data)
 
     render(list, data);
 
@@ -40,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     const addContact = input => input.value
-    // const emptyContact = input => input.value =""
 
     const addNewContact = () => {
         let addCont = {
@@ -57,17 +62,15 @@ document.addEventListener('DOMContentLoaded', () => {
          } if(addCont.email.indexOf('@') === -1 || addCont.email.indexOf('.') === -1 || addCont.email === ""  )  
          {alert("add a valid email address (mandatory @ and .)")}
           else{data.push(addCont)};
+        // datasort(data)
         render(list, data)
     }
 
 
     addBtn.addEventListener("click", (event) => {
         event.preventDefault();
-        addNewContact();
-        // emptyContact(inputAll)
-        contName.value =""
-        contNum.value =""
-        contMail.value =""
+        addNewContact()
+        form.reset();
 
     });
 
