@@ -1,3 +1,5 @@
+// export mi trasforna il js in un modulo
+
 export const data = [
     {
         name: "Rick Sanchez",
@@ -22,11 +24,6 @@ export const data = [
     {
         name: "cippa lippa",
         phone: "9955664488",
-        email: "cippa@gmail.com"
-    },
-    {
-        name: "sfdspa lippa",
-        phone: "995d4488",
         email: "cippa@gmail.com"
     }
 ];

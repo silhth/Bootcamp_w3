@@ -1,7 +1,22 @@
+body {
+    background-color: aliceblue;
+}
+
 main {
+    
     width: 80%;
     margin: 50px auto 80px; 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.contact-add {
+   cursor: pointer;
+   background: rgb(35, 65, 92);
+   color: aliceblue;
+   padding: 15px;
+   border: 2px solid rgb(4, 14, 24);
+   border-radius: 20px;
+   font-size: 20px;
 }
 
 form label{
@@ -9,8 +24,8 @@ form label{
     margin-bottom: 5px;
 }
 
-form input, 
-form button{
+form input,
+form button {
     line-height: 20px;
     font-size: 20px;
     padding: 5px;
@@ -32,15 +47,30 @@ ul li {
     margin: 3px 0;
 }
 
-.added-contact {
-    display: block;
-    margin: 50px auto;
+.add-contact {
+    display: none;
 }
 
-.add-contact {
+.show {
     display: block;
-    margin: 10px 0;
 }
+
+
+.adding-contact {
+    display: block;
+    background: rgb(35, 65, 92);
+    width: 100%;
+    max-width: 265px;
+    color: aliceblue;
+    padding: 15px;
+    border: 2px solid rgb(4, 14, 24);
+    border-radius: 20px;
+    font-size: 20px;
+    margin: 10px auto;
+}
+
+
+
 
 @media (min-width: 768px){
     ul{

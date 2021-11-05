@@ -10,34 +10,40 @@
 <body>
     <main>
         <header>
-            <h1>Widget contatti in Js</h1>
+            <h1>Contacts</h1>
         </header>
-        <form class="added-contact">
-            <h3>Add new contact</h3>
+        <div class="hide">
+            <button class="contact-add">Add new contact</button>
+        </div>
+    
+        <form class="add-contact">            
             <label for="add-name">new Name</label>
             <input type="text" name= "add" id= "add-name" placeholder="es: pippo" autocomplete="off"/>
             <label for="add-number">new Number</label>
-            <input type="text" name= "add" id= "add-number" placeholder="es: 002224466" autocomplete="off"/>
+            <input type="tel" name= "add" id= "add-number" placeholder="es: 002224466" autocomplete="off"/>
             <label for="add-mail">new Email</label>
-            <input type="text" name= "add" id= "add-mail" placeholder="es: a@mail.com" autocomplete="off"/>
-            <button class="add-contact" >Add contact</button>
-
-        </form>
-        <form class="contact">
-            <label for="search">Cerca tra i contatti:</label>
-            <input type="text" name= "search" id= "search" placeholder="es: pippo" autocomplete="off"/>
-            <button>Cerca</button>
+            <input type="email" name= "add" id= "add-mail" placeholder="es: a@mail.com" autocomplete="off"/>
+            <button class= "btn-add">Add contact</button>
         </form>
 
-        <ul>
-            <!-- <li>
-                <h3>Rick Sanchez</h3>
-                <p><strong>Phone: </strong> <a href="tel:24436661888">24436661888 </a></p>
-                <p><strong>Email: </strong> <a href="mailto:rick@gmail.com">rick@gmail.com</a></p>
-            </li> -->
-        </ul>
+        <div class="hide-cont">
+
+            <h3 class="contact-list">Contact list</h3>
+            <form class="contact">
+                <label for="search">Cerca tra i contatti:</label>
+                <input type="text" name= "search" id= "search" placeholder="es: pippo" autocomplete="off"/>
+                <button>Cerca</button>
+            </form>
+
+            <ul>
+                <!-- <li>
+                    <h3>Rick Sanchez</h3>
+                    <p><strong>Phone: </strong> <a href="tel:24436661888">24436661888 </a></p>
+                    <p><strong>Email: </strong> <a href="mailto:rick@gmail.com">rick@gmail.com</a></p>
+                </li> -->
+            </ul>
+        </div>
     </main>
-    <script src="data.js"></script>
-    <script src="index.js"></script>
+    <script type= "module" src="index.js"></script>
 </body>
 </html>
