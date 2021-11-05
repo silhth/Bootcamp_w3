@@ -10,7 +10,7 @@ const render = (container, items) => {
     </li>`
     );
 
-    const content = elements.join('');
+    const content = elements.sort((a,b) => (a.toLowerCase() > b.toLowerCase()) ? 1 : -1).join('');
     
     container.innerHTML = content;
 }
@@ -24,11 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const contName = q('#add-name')
     const contNum = q('#add-number')
     const contMail = q('#add-mail')
-    const datasort = (items) => 
-        {items.sort((a,b) => 
-        (a.name.toLowerCase() > b.name.toLowerCase()) ? 1 : ((a.name.toLowerCase() < b.name.toLowerCase())? -1 : 0))}
-   
-    datasort(data)
+    const inputAll =q ('input')
 
     render(list, data);
 
@@ -44,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     const addContact = input => input.value
-    // const emptyContact = form => form.value =""
+    // const emptyContact = input => input.value =""
 
     const addNewContact = () => {
         let addCont = {
@@ -61,15 +57,14 @@ document.addEventListener('DOMContentLoaded', () => {
          } if(addCont.email.indexOf('@') === -1 || addCont.email.indexOf('.') === -1 || addCont.email === ""  )  
          {alert("add a valid email address (mandatory @ and .)")}
           else{data.push(addCont)};
-        datasort(data)
         render(list, data)
     }
 
 
     addBtn.addEventListener("click", (event) => {
         event.preventDefault();
-        addNewContact()
-        // emptyContact()
+        addNewContact();
+        // emptyContact(inputAll)
         contName.value =""
         contNum.value =""
         contMail.value =""
